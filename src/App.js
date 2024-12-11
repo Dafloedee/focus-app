@@ -1,10 +1,10 @@
-import BackgroundImage from "./components/backgroundImage";
+import Main from "./pages/mainPage";
 
 // App component
 const App = () => {
     return (
-        <BackgroundImage>
-        </BackgroundImage>
+        <Main>
+        </Main>
     );
 };
 export default App;

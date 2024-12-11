@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import ButtonComponent from './button';
-import { IoPauseCircle, IoPlayCircle , IoReloadCircle} from "react-icons/io5";
+import { IoPauseCircle, IoPlayCircle, IoReloadCircle } from "react-icons/io5";
 
 const Time = styled.h1`
     color:white;
@@ -13,9 +13,7 @@ const Time = styled.h1`
   `;
 
 const Container = styled.div`
-    width: 100%;
-    height: 100vh;
-     display: flex;
+    display: flex;
     align-items:center;
     justify-content:center;
     flex-direction: column;
@@ -64,19 +62,19 @@ const Timer = () => {
     }
 
     let button;
-    if(isStart){
-        button = <ButtonComponent onClick={handleTimer}><IoPauseCircle size={24}></IoPauseCircle>Pause</ButtonComponent>            
-    } else if(!isStart && seconds !== 0){
+    if (isStart) {
+        button = <ButtonComponent onClick={handleTimer}><IoPauseCircle size={24}></IoPauseCircle>Pause</ButtonComponent>
+    } else if (!isStart && seconds !== 0) {
         button = <ButtonComponent onClick={handleTimer}><IoPlayCircle size={24}></IoPlayCircle>Resume</ButtonComponent>
     } else {
         button = <ButtonComponent onClick={handleTimer}><IoPlayCircle size={24}></IoPlayCircle>Start</ButtonComponent>
-  
+
     }
     return (
         <Container>
             <Time>{timerCalc(seconds)}</Time>
             <ButtonContainer>
-            {button}
+                {button}
                 <ButtonComponent onClick={resetTimer}><IoReloadCircle size={24}></IoReloadCircle>Reset</ButtonComponent>
             </ButtonContainer>
         </Container>
